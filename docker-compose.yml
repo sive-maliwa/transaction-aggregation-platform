@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: tx-postgres
+    environment:
+      POSTGRES_DB: txdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+
+  ingestion-api:
+    build: ./ingestion-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
+  aggregator-api:
+    build: ./aggregator-api
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres

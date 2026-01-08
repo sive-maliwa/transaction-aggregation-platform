@@ -1,0 +1,5 @@
+{
+    "FOOD": ["grocery", "restaurant", "food", "supermarket"],
+    "TRANSPORT": ["uber", "taxi", "bus"]
+}
+  
