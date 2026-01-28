@@ -1,21 +1,18 @@
 server:
-  port: 8081
+  port: ${SERVER_PORT:8081}
 
 spring:
   datasource:
-    url: jdbc:postgresql://tx-postgres:5432/txdb
-    username: postgres
-    password: postgres
+    url: ${DB_URL:jdbc:postgresql://tx-postgres:5432/txdb}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
       ddl-auto: update #validate
     show-sql: false
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
+    open-in-view: false
 
 management:
   endpoints:

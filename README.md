@@ -22,7 +22,7 @@ This project demonstrates a \*\*production-style backend architecture\*\* using:
 
 
 
-\## 🏗 Architecture Overview
+\## Architecture Overview
 
 
 
@@ -30,7 +30,7 @@ The system consists of the following services:
 
 
 
-\### 🔹 Ingestion API
+\### Ingestion API
 
 \- Accepts incoming transaction data
 
@@ -40,7 +40,7 @@ The system consists of the following services:
 
 
 
-\### 🔹 Aggregator API
+\### Aggregator API
 
 \- Aggregates persisted transaction data
 
@@ -49,20 +49,27 @@ The system consists of the following services:
 \- Runs on port \*\*8081\*\*
 
 
-
-\### 🔹 PostgreSQL
+\### PostgreSQL
 
 \- Shared database used by both services
 
 \- Containerized using official PostgreSQL image
 
+\### Configuration
+Both APIs support environment variable overrides for database and port configuration.
+Defaults are provided for local Docker usage.
 
+Example variables:
+- DB_URL
+- DB_USERNAME
+- DB_PASSWORD
+- SERVER_PORT
 
 ---
 
 
 
-\## 📦 Project Structure
+\## Project Structure
 
 transaction-aggregation-platform
 
@@ -98,7 +105,7 @@ transaction-aggregation-platform
 
 
 
-\## ⚙️ Prerequisites
+\## Prerequisites
 
 
 
@@ -118,11 +125,11 @@ Make sure you have the following installed:
 
 
 
-\## 🚀 Build \& Run (Docker)
+\## Build \& Run (Docker)
 
 
 
-\### 1️⃣ Build the project
+\### 1️ Build the project
 
 
 
@@ -136,7 +143,7 @@ mvn clean package
 
 
 
-2️⃣ Build and start all services
+2️ Build and start all services
 
 docker-compose up --build
 
@@ -162,7 +169,7 @@ Aggregator API → http://localhost:8081
 
 
 
-🧪 Running Tests
+- Running Tests
 
 
 
@@ -188,7 +195,7 @@ mvn test
 
 
 
-🩺 Health Checks
+- Health Checks
 
 
 
@@ -210,7 +217,7 @@ http://localhost:8081/actuator/health
 
 
 
-🐳 Docker Notes
+- Docker Notes
 
 
 
@@ -234,7 +241,7 @@ Database connectivity
 
 
 
-🧠 Design Considerations
+- Design Considerations
 
 
 
@@ -254,7 +261,7 @@ Container-first deployment approach
 
 
 
-🧾 Technology Stack
+- Technology Stack
 
 
 
@@ -278,9 +285,7 @@ Containerization: Docker, Docker Compose
 
 
 
-👤 Author
-
-
+- Author
 
 Programming Language: Java
 
